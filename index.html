@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="es">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="author" content="Jude moon">
+    <title>Visualización de datos educativos en Portugal</title>
+
+    <!-- add styles to text and graphics -->
+    <style>
+        h1 {
+            background-color: rgba(250, 186, 121, 0.8);
+            color: black;
+            font-family: "Calibri";
+            width: 100%;
+            height: 60px;
+            text-align: center;
+            padding-top: 20px;
+        }
+        h2 {
+            font-size: 1.4em;
+            font-family: "Calibri";
+            color: rgba(211, 84, 0);
+            margin-top: 0;
+        }
+        h3 {
+            font-family: "Calibri";
+            text-align: left;
+        }
+        h4 {
+            font-family: "Calibri";
+            text-align: left;
+        }
+        div.text {
+            font-family: "Calibri";
+            padding: 5px;
+            margin: 20px;
+            border-radius: 10px;
+        }
+        p.thick {
+          font-weight: bold;
+        }
+    </style>
+  </head>
+
+
+  <body>
+    <a href="https://imgbb.com/"><img src="https://i.ibb.co/vcxR76N/Logo-VIU.png" width=200px alt="Logo-VIU" border="0"></a>
+  
+    <h1 class="main-title">¿Sacar malas notas significa falta de inteligencia?</h1>
+
+    <h4 class="main-autor">Nombre: Víctor González Díez</h4>
+    <h4 class="main-fuente">Asignatura: Visualización de datos</h4>
+    <h4 class="main-fecha">Fecha: 16/11/2021</h4>
+    <h4 class="main-url">Url del proyecto: <a href="https://js-yw3zw4.stackblitz.io">https://js-yw3zw4.stackblitz.io</a></h4>
+    <h4 class="main-url">Google Colaboratory: <a href="https://colab.research.google.com/drive/1QnNde55czmdXR6_QyYYex9NvosZoCj9G?usp=sharing"> acceder al cuaderno</a></h4><br>
+    <br>
+
+
+
+
+
+
+    <!-- Introducción -->
+    <div class="summary">
+      <h2 class="text-title">1. Introducción</h2>
+      <div class="text">
+        Muchas veces se vinculan los malos resultados de un alumno con un problema de falta de inteligencia a la hora de encarar las asignaturas. Sin embargo, hay muchas más variables que podrían estar influyendo en el rendimiento de los alumnos, como el entorno familiar en el que se desarrolla. 
+        <br>
+        <br>
+        Hay numerosos ejemplos en la literatura en los que se intentan identificar los principales determinantes para un correcto desempeño en el colegio. En Cortez y Silva (2008), los autores elaboran un modelo que permite predecir el desempeño de un alumno en base a una serie de atributos. Sin embargo, en mi opinión, se centran solamente en los resultados del modelo sin prestar atención a la intepretación de los atributos utilizados y no incluyendo  material visual suficiente que ayude a entender las decisiones sobre la selección de variables llevada a cabo. Por ello, aprovechando los datos publicados por los autores, se decide aportar un análisis estadístico y visual de los atributos contenidos en el conjunto de datos, con especial énfasis en los atributos vinculados a las condidiones socioeconómicas de los alumnos. 
+        <br>
+        <br>
+        Por lo tanto, el <big><strong><span style="color: rgba(211, 84, 0)">OBJETIVO</span></strong></big> del presente análisis es intentar entender más a fondo qué se esconde tras las notas obtenidas por los alumnos en la escuela, identificando posibles variables que influencien el rendimiento de los alumnos con independencia de sus características personales innatas.  
+        <br>
+        <br>
+        El <big><strong><span style="color: rgba(211, 84, 0)">MENSAJE</span></strong></big> se transmitirá meidante este archivo html (o bien, su copia en un documento PDF), el cual incluirá tanto el material gráfico necesario para comprender y dar respuesta al problema, como las expliaciones necesarias para entender las decisiones que se han ido tomando.
+        <br>
+        <br>
+        Dado que se pretende aportar más evidencias a la literatura académica, este informe esta destinado a una <big><strong><span style="color: rgba(211, 84, 0)">AUDIENCIA</span></strong></big> con cierto nivel de conocimiento sobre estadística dada la complejidad de algunos de los gráficos y el análisis utilizado, y en concreto, a investigadores dentro del campo de la economía.
+        </br>
+        </br>
+        La <big><strong><span style="color: rgba(211, 84, 0)">MOTIVACIÓN</span></strong></big> de este documento reside en mi formación como economista con especialización en análisis económico enfocado a las áreas de probeza y desigualdad, siendo la educación un tema de gran interés como herramienta para luchar contra las desigualdades.
+        <br>
+        <br>
+        </br>
+      </div>
+    </div>
+
+
+
+
+
+
+    <!-- Contexto -->
+    <div class="summary">
+      <h2 class="text-title">2. Contexto</h2>
+      <div class="text">
+        Los datos proceden de <strong>Cortez y Silva (2008)</strong>, y se encuentran publicados en UCI (Machine Learning Repository) (<a href="https://archive.ics.uci.edu/ml/datasets/student+performance#">descargar</a>).
+        Estos datos incluyen las notas obtenidas durante el curso 2005/2006 por alumnos de dos colegios públicos de la región portuguesa de Alentejo, y una serie de características socioeconómicas de estos alumnos.
+        Los datos sobre las notas obtenidas y el número de ausencias provienen de los informes escolares, mientras que los datos socioeconómicos fueron recopilados mediante cuestionarios realizados a los mismos alumnos.
+        <br>
+        <br> 
+        Para entender mejor la situación del país luso, es importante saber que en su caso la educación comienza con 3 años de educación preescolar, seguida de 9 años de educación básica, 3 de educación secundaria y, por último, la educación superior. La <strong>figura 2.1</strong>, proporcionada por Eurydice, ilustra de forma sencilla como se distribuye la educación en Portugal.
+        <br>
+        <br> 
+      
+        <!-- add data visualization -->
+        <div class="plot">
+          <!-- Figure or chart -->
+          <h3 class="plot-title">Figura 2.1. La organización del sistema educativo portugués</h3>
+        </div>
+      
+        <div id="plotContainer1">
+          <a href="https://ibb.co/j8w43vY"><img src="https://i.ibb.co/fXN0rYW/Img-1.jpg" alt="Img-1" border="0" width=750px ></a>
+        </div>
+        Fuente: Eurydice.
+        <br>
+        <br>
+        <br> 
+        También es importante mencionar que el sistema de evaluación portugués califica a los alumnos en base a un sistema de 20 puntos, siendo 0 la puntuación más baja que se puede obtener. Además, los cursos se distribuyen a lo largo de tres trimestres, realizando una evaluación en cada uno de ellos y obteniendo una calificación final al terminar el curso.
+        <br>
+        <br> 
+        Tal y como explican en el documento, en ese momento la tasa de abandono escolar en Portugal se encontraba muy por encima de la media europea, por lo que intentar entender el propio caso nacional era de gran utilidad a la hora de  tomar las decisiones necesarias en materia de política educativa. 
+        La <strong>figura 2.2</strong> contiene la tasa de abandono escolar en Europa desde el año 1992 hasta el 2020. En ella se pueden identificar dos tipos de gráficos diferentes para representar el mismo atributo (la tasa de abandono escolar). 
+        <ul>
+          <li>🌍 <b>Mapa coroplético</b>.</li>
+          <li>📊 <b>Gráfico de barras</b>.</li>
+        </ul> 
+        Estos dos gráficos pertenecen a un dashboard elaborado con <a href="https://www.tableau.com/es-es">Tableau</a>. En ambos casos se usa una escala de colores de cinco escalones que va de verde oscuro 🟩 a rojo oscuro 🟥 pasando por el amarillo 🟨. La elección de estos colores se basa en que son tradicionalmente utilizados en países occidentales para diferenciar si una situación es favorable (verde), mejorable (amarillo) o preocupante (rojo), a modo de semáforo (mapa de calor).
+        <br>
+        <br>
+        El mapa permite ofrecer una ilustración sencilla para identificar posibles relaciones entre la tasa de abandono y la posición geográfica de los países. Por otra parte, el gráfico de barras muestra en forma de ranking la situación de cada país ordenada de mejor a peor, a la vez que permite la comparación entre países al estar representándoe una variable númerica (principal ventaja de los gráficos de columnas o barras). Como en este caso se están representando muchos valores, se opta por un gráfico de barras frente a uno de columnas, facilitando así la lectura de las etiquetas.
+        <br>
+        <br>
+        Por último, añadir que el gráfico es dinámico, pudiendose usar un filtro de año que incluye información desde el año 1992 hasta el 2020. Además, se aplica la técnica denominada <i>linking</i> mediante la cual, cuando se selecciona un país o varios en cualquiera de los gráficos, ambas visualizaciones se filtran por ese país o países seleccionados. Esto pemrite que si lo deseamos podamos centrarnos en un país o grupo de países en concreto.
+        <br>
+        <br> 
+                
+        <h3 class="plot-title">Figura 2.2. Tasa de abandono escolar en Europa [<a href="https://public.tableau.com/app/profile/v.ctor.gonz.lez8383/viz/Mapa_16369032005200/Mapa_tasa_abandono">enlace a Tableau Public</a>]</h3>
+        <div class='tableauPlaceholder' id='viz1636927098340' style='position: relative'><noscript><a href='#'><img alt='Mapa_tasa_abandono ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ma&#47;Mapa_16369032005200&#47;Mapa_tasa_abandono&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='Mapa_16369032005200&#47;Mapa_tasa_abandono' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ma&#47;Mapa_16369032005200&#47;Mapa_tasa_abandono&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='es-ES' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1636927098340');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='1000px';vizElement.style.height='827px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='1000px';vizElement.style.height='827px';} else { vizElement.style.width='100%';vizElement.style.height='877px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+        <br>
+        <br> 
+        Haciendo uso del filtro de año se puede observar cómo la situación de Portugal ha cambiado desde aquel momento, pasando a situarse actualmente por debajo de la media europea.
+        </br>
+        </br>
+        </br>
+      </div>
+    </div>
+
+
+
+
+
+
+    <!-- Análisis -->
+    <div class="summary">
+      <h2 class="text-title">3. Análisis</h2>
+      <div class="text">
+        <p style="padding: 10px; border: 2px solid grey;"><span style="color: grey">En el link a Google Colaboratory se puede encontrar algún gráfico más utilizado en el proceso de análisis de los datos, además del código utilizado en Python para la elaboración de los gráficos que se presentan a continuación.</span></p>
+        <br>
+        El conjunto de datos se encuentra formado por los resultados obtenidos por un grupo de alumnos en dos materias: portugués y matemáticas; siendo más amplia la información relativa a la asignatura de portugués. En concreto, el 62% de la información (649 alumnos) se refiere a la asignatura de portugués, perteneciendo el 38% restante (395 alumnos) a matemáticas (<strong>figura 3.1</strong>).
+        <br>
+        <br>
+        Este panel se ha elaborado en primera instancia con Python. Para aportar una nueva herramienta visual en este documento se ha replicado mediante <a href="https://www.datawrapper.de/">Datawrapper</a>. Esta compuesto por dos gráficos:  
+        <ul>
+          <li>📊 <b>Gráfico de columnas</b>.</li>
+          <li>⚪ <b>Gráfico de sectores</b>.</li>
+        </ul>
+        El gráfico de columnas permite comparar mejor la diferencia entre el número de observaciones disponibles en el conjunto de datos para cada asignatura. Por otra parte, el gráfico de sectores puede resultar más interesante si queremos representar la composición de los datos por asignatura. También se podría haber optado por un gráfico de barras apiladas, pero estéticamentesería un poco limitado al solo contar con una única columna. En ambos casos se usa la dimensión del color para identificar a cada aisgnatura.
+        <br>
+        <br>
+        <!-- add data visualization -->
+        <div class="plot">
+          <!-- Figure or chart -->
+          <h3 class="plot-title">Figura 3.1. Alumnos analizados por asignatura [<a href="https://www.datawrapper.de/_/hH2OT/">enlace 1</a> y <a href="https://www.datawrapper.de/_/zz6UT/">enlace 2</a> a Datawrapper]</h3>
+        </div>
+        <div id="plotContainer1">
+          <iframe title="[ Insert title here ]" aria-label="Gráfico de columnas" id="datawrapper-chart-hH2OT" src="https://datawrapper.dwcdn.net/hH2OT/1/" scrolling="no" frameborder="0" style="border: none;" width="250" height="400"></iframe>
+          <iframe title="" aria-label="chart" id="datawrapper-chart-zz6UT" src="https://datawrapper.dwcdn.net/zz6UT/6/" scrolling="no" frameborder="0" style="border: none;" width="400" height="276"></iframe></div>
+        </br>
+        </br>
+
+        Dado que se analizan dos asignaturas diferentes, es de interés analizar la distribución de las notas que se obtienen en las dos asignaturas, pudiendo así concluir si cada asignatura tiene unas características propias por las que deba ser analizada de forma independiente. Para ello en la <strong>figura 3.2</strong> se usa un histograma📊 junto con líneas que ilustran la distribución suavizada de los datos 📈. 
+        Este tipo de gráfico es el más adecuado cuando se quiere representar la distribución de un conjunto de datos. En este caso se ha representado la nota final de los alumnos por asignatura. Nuevamente se usa la dimensión del color para identificar a cada asignatura, aplicando los mismos colores.
+        </br>
+        </br>
+
+        <!-- add data visualization -->
+        <div class="plot">
+          <!-- Figure or chart -->
+          <h3 class="plot-title">Figura 3.2. Distribución de las notas por asignatura</h3>
+        </div>
+        <div id="plotContainer1">
+          <a href="https://imgbb.com/"><img src="https://i.ibb.co/wWNWQKt/G-3.png" alt="G-3" border="0"></a>
+        </div>
+        
+        
+        <br>
+        <br>
+        El gráfico de distribuciones permite concluir que las asignaturas tienen comportamientos parecidos en cuanto a clasificaciones, considerándose el conjunto total de la información en el resto del informe.
+        <br>
+        <br>
+        Para conocer las relaciones entre todos los atributos disponibles se utiliza en la <strong>figura 3.3</strong> un mapa de calor 🚦, obviando la parte simétrica del mismo por conener la misma información que la representada finalmente.
+        Este gráfico se utiliza muy frecuentemente para facilitar la interpretación y la visualización de la matriz de correlaciones de un conjunto de datos. Gracias a la escala de colores (rojo para correlaciones positivas y azul para las negativas), la cual también juega con la dimensión de la tonalidad de los colores para indicar una mayor o menor correlación entre dos atributos, se puede interpretar la matriz de correlaciones rápidamente.   
+
+        </br>
+        </br>
+        </br>
+      
+        <!-- add data visualization -->
+        <div class="plot">
+          <!-- Figure or chart -->
+          <h3 class="plot-title">Figura 3.3. Matriz de correlación</h3>
+        </div>
+        <div id="plotContainer1">
+          <a href="https://ibb.co/7vM3xTn"><img src="https://i.ibb.co/5TpQXzr/G-4.png" alt="G-4" border="0"></a>
+        </div>
+        </br>
+
+        A simple vista destacan dos pares de atributos con una relación de 0,64 y 0,63 respectivamente.
+        <ul>
+          <li><i>Fedu</i> y <i>Medu</i>: se refieren a la educación del padre y de la madre en cada caso.</li>
+          <li><i>Walc</i> y <i>Dalc</i>: el primero se refiere al consumo de alcohol durante el fin de semana y el último al consumo de alcohol durante la semana laboral.</li>
+        </ul>    
+        Para conocer mejor que se esconde destrás de estas correlaciones las <strong>figuras 3.4 y 3.5</strong> usan un diagrama de dispersión o <i>scatterplot</i> ⚫⚫ al cual se le añade una tercera dimensión usando el tamaño de las esferas para indicar el número de observaciones con esa combinación de atributos.
+        Este tipo de gráfico es el más indicado para representar la relación (correlación) entre dos atributos.
+        </br>
+        </br>
+        </br>
+      
+        <!-- add data visualization -->
+        <div class="plot">
+          <!-- Figure or chart -->
+          <h3 class="plot-title">Figura 3.4. Correlación entre la educación de los padres</h3>
+        </div>
+        <div id="plotContainer1">
+          <a href="https://ibb.co/vj0yF60"><img src="https://i.ibb.co/S3FYj4F/G-5.png" alt="G-5" border="0" width=850px ></a>
+        </div>
+        </br>   
+
+        <!-- add data visualization -->
+        <div class="plot">
+          <!-- Figure or chart -->
+          <h3 class="plot-title">Figura 3.5. Correlación entre el consumo de alcohol</h3>
+        </div>
+        <div id="plotContainer1">
+          <a href="https://ibb.co/808jPyq"><img src="https://i.ibb.co/G0PVCZy/G-6.png" alt="G-6" border="0"></a>
+        </div>
+        </br>   
+
+        En el caso de la educación de los padres, los datos indican que normalmente ambos padres tienen el mismo nivel de estudios.
+        En el caso del consumo de alcohol se concluye que a medida que los alumnos consumen más alcohol durante el fin de semana también irán aumentando su consumo diario de alcohol durante los días de escuela.
+        <br>
+        <br>
+        Para estudiar la importancia de los atributos disponibles sobre la calificación final obtenida por el alumno se utiliza en la <strong>figura 3.6</strong> un gráfico de barras 📊 que ordena de mayor a menor la correlación entre los atributos y la nota final obtenida. 
+        
+        Se usa el gráfico de barras puesto que (junto con los de columnas) son ideales para las comparaciones. Se ha optado por usar barras en lugar de columnas debido al elevado número de atributos a valorar, facilitando la lectura de las etiquetas si se representan en el eje vertical.
+
+        Además, se ha añadido también una dimensión más a través del color para indicar cuando una correlación es positiva (verde) o negativa (roja). Por último, también se incluyó una línea vertical en el valor 0,1 para poder analizar fácilmente las atributos con correlaciones que están por encima o por debajo de dicho valor.   
+        </br>
+        </br>
+        </br>
+    
+        <!-- add data visualization -->
+        <div class="plot">
+          <!-- Figure or chart -->
+          <h3 class="plot-title">Figura 3.6. Correlación de las variables con la nota final</h3>
+        </div>
+        <div id="plotContainer1">
+          <a href="https://ibb.co/RpYhLvG"><img src="https://i.ibb.co/VWJHXj0/G-7.png" alt="G-7" border="0"></a>
+        </div>
+        </br> 
+
+        Se puede concluir que hay ciertos atributos socioeconómicos de gran relevancia para el rendimiento académico de un alumno.
+        <ul>
+          <li><i>Medu</i> y <i>Fedu</i>: la educación de los padres (estando la de ambos progenitores muy relacionada tal y como se vio anteriormente) resulta ser un factor muy relevante para el desarrollo educativo de los hijos.</li>
+          <li><i>Dalc</i> y <i>Walc</i>: el consumo de alcohol reduce las horas de estudio del alumno y el aprovechamiento de estas, dando como resultado un peor rendimiento escolar.</li>
+          <li><i>address</i>: si la persona vive en un entorno rural o urbano, lo que implicará un mayor esfuerzo a la hora de desplazarse hasta el centro educativo.</li>
+          <li><i>internet</i>: si la persona tiene acceso a internet en casa o no.</li>
+          <li><i>traveltime</i>: tiempo que supone el trayecto a la escuela para el alumno. Esta variable está bastante correlacionada con el entorno en el que vive, por lo que en adelante nos centraremos únicamente en el atributo (<i>address</i>)</li>
+        </ul>
+        Una vez se han identificado estos atributos se pasa a analizar las diferencias que hay en las notas en base a ellos.          
+        Para cumplir con este propósito, en la <strong>figura 3.7</strong> se utilizan cuatro gráficos de cajas y bigotes 📦. Este tipo de gráficos permite comparar rápidamente diferencias entre los valores que toma un atributo, comparando tanto la media como el rango intercuartil en cada caso. También se pueden observar los máximos y mínimos obtenidos en cada valor, así como los outliers (si los hubiese).       
+        <br>  
+        <br>      
+        En el caso de los estudios de la madre, y tal y como se observó anteriormente, son muy pocos los casos en los que la madre no tiene estudios, por lo que ofrecería poca información en este tipo de gráfico y por lo tanto se elimina.
+        <br>  
+        <br>
+
+        <!-- add data visualization -->
+        <div class="plot">
+          <!-- Figure or chart -->
+          <h3 class="plot-title">Figura 3.7. Impacto de los principales atributos socioeconómicos en los estudios del alumno</h3>
+        </div>
+        <div id="plotContainer1">
+          <a href="https://ibb.co/1bwfnFp"><img src="https://i.ibb.co/ZNk6Jqw/G-8.png" alt="G-8" border="0" width=900px ></a>
+        </div>
+        </br> 
+        </br>
+        </br>
+      </div>
+
+
+    <!-- Conclusión -->
+    <div class="Interpretation">
+      <h2 class="text-title">4. Conclusión</h2>
+      <div class="text">
+        Tal y como se ha podido observar en los gráficos anteriores, existen ciertos atributos socioeconómicos que afectan al rendimiento académico de los alumnos.
+        <ul>
+          <li>Gozar de un entorno apropiado para el desarrollo educativo de la juventud es esencial. Las personas que viven en entornos rurales tienen que afrontar un mayor tiempo de desplazamiento hasta la escuela, tal y como indica la correlación observada entre estos dos atributos.  Esto finalmente se traduce en una diferencia significativa en las notas entre aquellos alumnos que provienen de hogares en zonas rurales y los que viven en una zona urbana.</li>
+          <li>Disponer de conexión a internet amplía notablemente las posibilidades del alumno a la hora de estudiar y hacer las tareas diarias. En el gráfico de cajas se observa que los alumnos que tienen acceso a internet en casa obtienen de media resultados superiores que los que no tienen acceso.</li>
+          <li>Por otra parte, poder recibir ayuda por parte de los padres también tiene un efecto positivo en el redimiento académico, mostrando una mejora de las calificaciones a medida que aumenta el nivel educativo paterno.</li>
+          <li>Finalmente, un mayor control parental de cara a salir de fiesta y el consumo de alcohol favorecerá el desarrollo educativo del alumno.</li>
+      </ul>
+      Por lo tanto, los resultados académicos no muestran necesariamente el nivel de inteligencia de la persona, puesto que también dependen de un gran número de atributos a tener en cuenta.
+        </br>
+        </br>
+        </br>
+      </div>
+    </div>
+    
+
+    <!-- Referencias -->
+    <div class="Interpretation">
+      <h2 class="text-title">Referencias</h2>
+      <div class="text">
+      <ul>
+        <li><b>Cortez, P., & Silva, A. M. G. (2008)</b>. Using Data Mining to Predict Secondary School Student Performance. In A. Brito and J. Teixeira Eds., Proceedings of 5th FUture BUsiness TEChnology Conference (FUBUTEC 2008) pp. 5-12, Porto, Portugal, April, 2008, EUROSIS, ISBN 978-9077381-39-7. Disponible <a href="http://www3.dsi.uminho.pt/pcortez/student.pdf">AQUÍ</a>. </li>
+        <li><b>Eurostat</b>: <a href="https://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=edat_lfse_14&lang=en">edat_lfse_14</a> [última actualización: 18-10-2021]. </li>
+        <li><b>Eurydice</b>. [<a href="https://eacea.ec.europa.eu/national-policies/eurydice/index_en.php_en">Link</a>]</li>
+        <li>La base de datos está disponible <a href="https://archive.ics.uci.edu/ml/datasets/student+performance#">AQUÍ</a>.</li>
+      </ul>
+      </div>
+    </div>
+  
+    <!-- Herramientas empleadas -->
+    <div class="Interpretation">
+    <h2 class="text-title">Herramientas empleadas</h2>
+    <div class="text">
+    <ul>
+      <li><b>✅ Datawrapper</b>: figura 3.1 (previamente realizada en Python). </li>
+      <li><b>✅ Python</b>: figuras 3.1, 3.2, 3.2, 3.4, 3.5, 3.6 y 3.7.</li>
+      <li><b>✅ Tableau</b>: figura 2.2.</li>
+    </ul>
+    </div>
+  </div>
+    </br>
+    </br>
+    </br>
+  </body>
+</html>
